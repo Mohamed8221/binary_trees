@@ -56,6 +56,7 @@ bst_t *bst_remove(bst_t *root, int value);
 int binary_tree_is_avl(const binary_tree_t *tree);
 int binary_tree_is_complete(const binary_tree_t *tree);
 int bst_helper(binary_tree_t *tree, int min, int max);
+bst_t *minValueNode(bst_t *node);
 avl_t *avl_insert(avl_t **tree, int value);
 avl_t *insert_node(avl_t **tree, int value);
 void binary_tree_print(const binary_tree_t *);
