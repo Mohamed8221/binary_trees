@@ -14,8 +14,8 @@ int height_right = 0;
 if (tree == NULL)
 return (0);
 
-height_left = tree->left ? binary_tree_height(tree->left) + 1 : 0;
-height_right = tree->right ? binary_tree_height(tree->right) + 1 : 0;
+height_left = binary_tree_height(tree->left);
+height_right = binary_tree_height(tree->right);
 
 return (height_left - height_right);
 }
