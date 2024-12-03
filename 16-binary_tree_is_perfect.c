@@ -9,28 +9,28 @@
 */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-int depth_left = 0;
-int depth_right = 0;
+int depth_left, depth_right;
 
 if (tree == NULL)
 return (0);
 
+// Calculate the depth of the left and right subtrees
 depth_left = binary_tree_depth(tree->left);
 depth_right = binary_tree_depth(tree->right);
 
-if (depth_left == depth_right)
-{
+// Check if both subtrees have the same depth
+if (depth_left != depth_right)
+return (0);
+
+// Check if both left and right children are present
 if (tree->left == NULL && tree->right == NULL)
 return (1);
 
 if (tree->left != NULL && tree->right != NULL)
-return (binary_tree_is_perfect(tree->left)
-&& binary_tree_is_perfect(tree->right));
-}
+return (binary_tree_is_perfect(tree->left) && binary_tree_is_perfect(tree->right));
 
 return (0);
 }
-
 
 /**
 * binary_tree_depth - measures the depth of a node in a binary tree
@@ -53,4 +53,3 @@ tree = tree->parent;
 
 return (depth);
 }
-
